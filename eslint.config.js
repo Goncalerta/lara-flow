@@ -41,7 +41,16 @@ export function buildEslintConfig(dirname) {
         "no-constant-condition": ["error", { checkLoops: false }],
         "@typescript-eslint/no-namespace": "off",
       },
-    }
+    },
+    {
+      files: ["tests/**/*.mjs"],
+      languageOptions: {
+        sourceType: "module",
+        parserOptions: {
+          project: false,
+        },
+      },
+    },
   ];
 }
 
